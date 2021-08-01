@@ -1,33 +1,57 @@
-<?php include 'head.php' ?>
+<?php 
 
-<body>
-    <nav class=" nav navbar bg-primary ">
-        <span class="text-white">WiFinet</span>
-        <div class="row justify-content-end " style="padding-right:10px;">
-            <span>@username</span>
-        </div>
-    </nav>
-    <div class="row h-100">
-        <div class="col-md-2 bg-dark ">
+$title = " DASHBOARD";
 
-            <ul class="list-unstyled components " style="padding: 10px;">
-                <li>
-                    <a href="index.html"> Home </a>
-                </li>
-                <li>
-                    <a href="services.html"> Services </a>
-                </li>
-                <li>
-                    <a href="health-tips.html"> Health-Tips </a>
-                </li>
-                <li>
-                    <a href="contact-us.html"> Contact us </a>
-                </li>
-                <li>
-                    <a href="about-us.html"> About us </a>
-                </li>
-        </div>
-        <div class="col bg-success"></div>
+include_once "config.php";
 
+include 'head.php';
+
+if (!isset($_SESSION['submit'])) {
+    
+    echo "<h6  class='loginError'>You Have to Login. <a href='dashboardLogin.php'>Click Here to Login</a></h6>";
+}
+
+
+
+
+else{
+    
+
+?>
+<div class="dash-container">
+   
+
+    <!-- side bar -->
+    <?= include_once "sideBar.php"; ?>
+    
+
+    <div class="main-content">
+
+            <div class="header">
+            
+                <!-- open toggle btn -->
+                <div class="toggle-btn open-toggle-btn ">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+
+                <!-- open toggle btn -->
+                <div class="toggle-btn close-toggle-btn ">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+
+            
+                <h6 class="msg"><?= "welcome: ".$_SESSION['username'] ?></h6>
+            </div>
     </div>
-</body>
+
+</div>
+    
+
+
+<?php } ?>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/toggle-fun.js"></script>

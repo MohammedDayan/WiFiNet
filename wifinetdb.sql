@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2021 at 10:42 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.6
+-- Generation Time: Aug 01, 2021 at 06:01 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `id` int(25) NOT NULL,
   `username` varchar(25) NOT NULL,
-  `mobile` int(12) NOT NULL,
-  `email` varchar(25) NOT NULL,
+  `mobile` varchar(70) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `address` varchar(9) NOT NULL,
-  `password` varchar(25) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `date` datetime(6) NOT NULL DEFAULT current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,7 +42,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `mobile`, `email`, `address`, `password`, `date`) VALUES
-(1, 'abduldayan', 240527371, 'mohammeddayan29@gmail.com', 'A8 kt', 'dannet11', '2021-07-29 19:02:01.455608');
+(1, 'rahim', '233541070745', 'alhassan@gmail.com', 'NT-0118-7', 'ee9350b4775e00ca2b97511bb3dcc4c685df10bb', '2021-08-01 11:13:04.222315'),
+(2, 'sufi', '233541070745', 'aar@gmail.com', 'NT-6353-5', '8cb2237d0679ca88db6464eac60da96345513964', '2021-08-01 16:01:24.910923');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
