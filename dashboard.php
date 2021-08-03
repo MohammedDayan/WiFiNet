@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $title = " DASHBOARD";
 
@@ -7,28 +7,23 @@ include_once "config.php";
 include 'head.php';
 
 if (!isset($_SESSION['submit'])) {
-    
+
     echo "<h6  class='loginError'>You Have to Login. <a href='dashboardLogin.php'>Click Here to Login</a></h6>";
-}
+} else {
 
-
-
-
-else{
-    
 
 ?>
-<div class="dash-container">
-   
+    <div class="dash-container">
 
-    <!-- side bar -->
-    <?= include_once "sideBar.php"; ?>
-    
 
-    <div class="main-content">
+        <!-- side bar -->
+        <?= include_once "sideBar.php"; ?>
+
+
+        <div class="main-content">
 
             <div class="header">
-            
+
                 <!-- open toggle btn -->
                 <div class="toggle-btn open-toggle-btn ">
                     <span class="icon-bar"></span>
@@ -43,13 +38,17 @@ else{
                     <span class="icon-bar"></span>
                 </div>
 
-            
-                <h6 class="msg"><?= "welcome: ".$_SESSION['username'] ?></h6>
+
+                <h6 class="msg"><?= "welcome: " . $_SESSION['username'] ?></h6>
             </div>
+
+            <iframe class="embed-responsive-item" height="800ox" width="100%" src="account.php" name="iframe_a"></iframe>
+
+
+        </div>
+
     </div>
 
-</div>
-    
 
 
 <?php } ?>
