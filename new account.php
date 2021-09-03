@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $title = " SINGUP";
 
@@ -9,7 +9,8 @@ include_once "config.php";
 if (isset($_POST['save'])) {
 
 
-    function check($data){
+    function check($data)
+    {
 
         $data = htmlspecialchars($data);
         $data = trim($data);
@@ -22,34 +23,31 @@ if (isset($_POST['save'])) {
     $email = check($_POST['email']);
     $address = check($_POST['address']);
     $password = check(sha1($_POST['password']));
+    $pack = '2 Cedis 400 Mb';
 
 
-    $query = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");  
+    $query = mysqli_query($connect, "SELECT * FROM users WHERE username = '$username' AND password = '$password'");
 
 
 
     $num = mysqli_num_rows($query);
 
-    if($num === 1){
+    if ($num === 1) {
 
         echo "<script>alert('User Already exists');</script>";
+    } else {
 
-    }
-    else{
+        $insert = mysqli_query($connect, "INSERT INTO users(username, mobile, email, address ,password,currentPackage) VALUES( '$username','$phone','$email','$address','$password','$pack)");
 
-        $insert = mysqli_query($connect, "INSERT INTO users(username, mobile, email, address ,password) VALUES( '$username','$phone','$email','$address','$password')");
-
-        if($insert){
+        if ($insert) {
             echo "<script>window.location='dashboardLogin.php'</script>";
-        }
-        else{
+        } else {
             echo "<script>alert('An Error Occurred Try Again');</script>";
         }
     }
-
 }
 
- ?>
+?>
 
 <body>
     <div class="container h-100">

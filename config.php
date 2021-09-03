@@ -2,9 +2,9 @@
 
 session_start();
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$dbname = "wifinet";
+$hostname = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'wifinet';
 
-$connect = mysqli_connect($host, $user, $password, $dbname);
+$connect = mysqli_connect($hostname, $user, $password, $database,);

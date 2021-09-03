@@ -10,7 +10,12 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/mainstyle.css">
-
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,4 +24,4 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
-<!-- <script src="js/main.js"></script> -->
+<script src="js/main.js"></script>

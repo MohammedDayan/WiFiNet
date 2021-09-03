@@ -16,7 +16,7 @@ $("document").ready(function(){
 
             $(".sideBar").css("display", "block");
             $(".main-content").css("width","80%");
-            $(".main-content").css("margin-left","20%");
+            $(".main-content").css("margin-left","0%");
             $(".open-toggle-btn").css("display", "block");
             $(".close-toggle-btn").css("display", "none");
         });

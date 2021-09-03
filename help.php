@@ -1,1 +1,1 @@
-<h2> Contact us on 0240527371</h2>
+<h2 class="text-center"> Contact us on 0240527371</h2>
